@@ -543,3 +543,7 @@
 2020-11-02 22:14:41,458 [INFO] ApiDb:230 - User favorites MCUs=[]
 2020-11-02 22:14:41,458 [INFO] ApiDb:226 - Save user favorites file C:\Users\baseo/.stm32cubeide/favorites.boards.txt: 1 item(s)
 2020-11-02 22:14:41,474 [INFO] ApiDb:230 - User favorites Boards=[NUCLEO-F103RB]
+2020-11-03 00:10:52,667 [INFO] Activator:178 - 
+
+
+2020-11-03 00:10:52,676 [INFO] Activator:179 - !SESSION log4j initialized
