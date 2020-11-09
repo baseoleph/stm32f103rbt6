@@ -1,18 +1,18 @@
 [PreviousGenFiles]
 AdvancedFolderStructure=true
 HeaderFileListSize=3
-HeaderFiles#0=C:/Users/baseo/git/stm32f103rbt6/blinking_led_auto/Core/Inc/stm32f1xx_it.h
-HeaderFiles#1=C:/Users/baseo/git/stm32f103rbt6/blinking_led_auto/Core/Inc/stm32f1xx_hal_conf.h
-HeaderFiles#2=C:/Users/baseo/git/stm32f103rbt6/blinking_led_auto/Core/Inc/main.h
+HeaderFiles#0=C:/Users/baseo/CLionProjects/untitled3/Core/Inc/stm32f1xx_it.h
+HeaderFiles#1=C:/Users/baseo/CLionProjects/untitled3/Core/Inc/stm32f1xx_hal_conf.h
+HeaderFiles#2=C:/Users/baseo/CLionProjects/untitled3/Core/Inc/main.h
 HeaderFolderListSize=1
-HeaderPath#0=C:/Users/baseo/git/stm32f103rbt6/blinking_led_auto/Core/Inc
+HeaderPath#0=C:/Users/baseo/CLionProjects/untitled3/Core/Inc
 HeaderFiles=;
 SourceFileListSize=3
-SourceFiles#0=C:/Users/baseo/git/stm32f103rbt6/blinking_led_auto/Core/Src/stm32f1xx_it.c
-SourceFiles#1=C:/Users/baseo/git/stm32f103rbt6/blinking_led_auto/Core/Src/stm32f1xx_hal_msp.c
-SourceFiles#2=C:/Users/baseo/git/stm32f103rbt6/blinking_led_auto/Core/Src/main.c
+SourceFiles#0=C:/Users/baseo/CLionProjects/untitled3/Core/Src/stm32f1xx_it.c
+SourceFiles#1=C:/Users/baseo/CLionProjects/untitled3/Core/Src/stm32f1xx_hal_msp.c
+SourceFiles#2=C:/Users/baseo/CLionProjects/untitled3/Core/Src/main.c
 SourceFolderListSize=1
-SourcePath#0=C:/Users/baseo/git/stm32f103rbt6/blinking_led_auto/Core/Src
+SourcePath#0=C:/Users/baseo/CLionProjects/untitled3/Core/Src
 SourceFiles=;
 
 [PreviousLibFiles]
