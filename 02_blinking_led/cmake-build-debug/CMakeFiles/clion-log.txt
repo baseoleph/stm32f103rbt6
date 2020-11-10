@@ -1,5 +1,0 @@
-/snap/clion/129/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/baseoleph/git/stm32f103rbt6/02_blinking_led
--- Minimal optimization, debug info included
--- Configuring done
--- Generating done
--- Build files have been written to: /home/baseoleph/git/stm32f103rbt6/02_blinking_led/cmake-build-debug

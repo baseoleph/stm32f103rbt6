@@ -3,6 +3,7 @@
 
 int main(void)
 {
+
     RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
     while(__HAL_RCC_GPIOA_IS_CLK_DISABLED());
 

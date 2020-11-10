@@ -1,3 +1,0 @@
-/home/baseoleph/git/stm32f103rbt6/02_blinking_led/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/baseoleph/git/stm32f103rbt6/02_blinking_led/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/baseoleph/git/stm32f103rbt6/02_blinking_led/cmake-build-debug/CMakeFiles/02_blinking_led.elf.dir
