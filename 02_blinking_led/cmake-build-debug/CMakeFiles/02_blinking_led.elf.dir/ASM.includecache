@@ -6,5 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/baseoleph/git/stm32f103rbt6/02_blinking_led/Core/Startup/startup_stm32f103rbtx.s
-
