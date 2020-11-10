@@ -1,7 +1,20 @@
 #include "stdint.h"
 //#include "stm32f103xb.h"
 
+void setUpLed();
+void setLight();
+void resetLight();
+
 int main(void)
+{
+    setUpLed();
+    setLight();
+    while (1)
+  {
+  }
+}
+
+void setUpLed()
 {
     // Адрес RCC
     uint32_t Reset_and_Clock_Control = 0x40021000UL;
@@ -38,6 +51,12 @@ int main(void)
     uint32_t max_speed_10 = 0b1;
     // Устанавливаю
     *GPIOA_CRL__ |= max_speed_10 << MODE5__;
+}
+
+void setLight()
+{
+    // Адрес GPIO A
+    uint32_t GPIOA__ = 0x40010800;
 
     // Регистр BSRR
     uint32_t BSRR__ = 0x10;
@@ -46,11 +65,22 @@ int main(void)
 
     // Бит set 5 pin
     uint32_t BS5__ = 5;
+    uint32_t set_bit = 0b1;
+    *GPIOA_BSRR__ |= set_bit << BS5__;
+}
+
+void resetLight()
+{
+    // Адрес GPIO A
+    uint32_t GPIOA__ = 0x40010800;
+
+    // Регистр BSRR
+    uint32_t BSRR__ = 0x10;
+    // Полный адрес GPIOx_BSRR
+    uint32_t *GPIOA_BSRR__ = GPIOA__ + BSRR__;
+
     // Бит reset 5 pin
     uint32_t BR5__ = 21;
     uint32_t set_bit = 0b1;
-    *GPIOA_BSRR__ |= set_bit << BS5__;
-    while (1)
-  {
-  }
+    *GPIOA_BSRR__ |= set_bit << BR5__;
 }
