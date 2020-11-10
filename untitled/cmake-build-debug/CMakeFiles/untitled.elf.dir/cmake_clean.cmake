@@ -21,6 +21,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/untitled.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj"
   "CMakeFiles/untitled.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj"
   "untitled.elf"
+  "untitled.elf.manifest"
   "untitled.elf.pdb"
 )
 

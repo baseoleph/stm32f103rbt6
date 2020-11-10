@@ -246,21 +246,21 @@ stm32f1xx_hal_def.h
 stm32f1xx_hal_def.h
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
 
-/home/baseoleph/CLionProjects/untitled/Core/Src/main.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Core/Src/main.c
 main.h
-/home/baseoleph/CLionProjects/untitled/Core/Src/main.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Core/Src/main.h
 
-/home/baseoleph/CLionProjects/untitled/Core/Src/stm32f1xx_hal_msp.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Core/Src/stm32f1xx_hal_msp.c
 main.h
-/home/baseoleph/CLionProjects/untitled/Core/Src/main.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Core/Src/main.h
 
-/home/baseoleph/CLionProjects/untitled/Core/Src/stm32f1xx_it.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Core/Src/stm32f1xx_it.c
 main.h
-/home/baseoleph/CLionProjects/untitled/Core/Src/main.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Core/Src/main.h
 stm32f1xx_it.h
-/home/baseoleph/CLionProjects/untitled/Core/Src/stm32f1xx_it.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Core/Src/stm32f1xx_it.h
 
-/home/baseoleph/CLionProjects/untitled/Core/Src/syscalls.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Core/Src/syscalls.c
 sys/stat.h
 -
 stdlib.h
@@ -278,69 +278,69 @@ sys/time.h
 sys/times.h
 -
 
-/home/baseoleph/CLionProjects/untitled/Core/Src/sysmem.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Core/Src/sysmem.c
 errno.h
 -
 stdint.h
 -
 
-/home/baseoleph/CLionProjects/untitled/Core/Src/system_stm32f1xx.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Core/Src/system_stm32f1xx.c
 stm32f1xx.h
-/home/baseoleph/CLionProjects/untitled/Core/Src/stm32f1xx.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Core/Src/stm32f1xx.h
 
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c
 stm32f1xx_hal.h
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
 
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c
 stm32f1xx_hal.h
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
 
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c
 stm32f1xx_hal.h
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
 
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c
 stm32f1xx_hal.h
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
 
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c
 stm32f1xx_hal.h
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
 
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c
 stm32f1xx_hal.h
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
 
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c
 stm32f1xx_hal.h
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
 
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c
 stm32f1xx_hal.h
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
 
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c
 stm32f1xx_hal.h
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
 
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c
 stm32f1xx_hal.h
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
 
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c
 stm32f1xx_hal.h
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
 
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c
 stm32f1xx_hal.h
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
 
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c
 stm32f1xx_hal.h
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
 
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c
 stm32f1xx_hal.h
-/home/baseoleph/CLionProjects/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
+C:/Users/baseo/git/stm32f103rbt6/untitled/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.h
 
