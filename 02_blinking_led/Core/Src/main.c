@@ -1,4 +1,5 @@
 #include "stdint.h"
+#include "cmsis_gcc.h"
 //#include "stm32f103xb.h"
 #include "stm32f1xx_hal.h"
 #include "stm32f1xx_hal_conf.h"
@@ -8,14 +9,26 @@ void setUpLed();
 void setLight();
 void resetLight();
 
-uint32_t flag = 0;
+void Delay(uint32_t val)
+{
+    for (; val != 0; val--)
+    {
+        __NOP();
+    }
+}
+
 int main(void)
 {
+
     setUpHSE();
     setUpLed();
-    setLight();
+
     while (1)
     {
+        setLight();
+        Delay(55560);
+        resetLight();
+        Delay(55560);
     }
 }
 
@@ -32,7 +45,7 @@ void setUpHSE()
         ++cnt;
     } while (HSEStatus == 0 && cnt != HSE_STARTUP_TIMEOUT);
 
-    if ((RCC->CR && RCC_CR_HSERDY) != RESET)
+    if ((RCC->CR & RCC_CR_HSERDY) != RESET)
     {
         HSEStatus = 0x1;
     }
@@ -50,12 +63,12 @@ void setUpHSE()
 
 
         // AHB prescaler
-        RCC->CFGR |= RCC_CFGR_HPRE_DIV1;
+        RCC->CFGR |= RCC_CFGR_HPRE_DIV512;
 
         // Как я понял это множитель на шину APB. Светодиод там.
         // Настраивать другие множители не нужно
         // APB2 prescaler
-        RCC->CFGR |= RCC_CFGR_PPRE2_DIV1;
+        RCC->CFGR |= RCC_CFGR_PPRE2_DIV16;
 
         // Как я это понимаю --> сбрасываем настройки pll модулей
         RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLXTPRE | RCC_CFGR_PLLMULL));
