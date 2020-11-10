@@ -98,8 +98,17 @@ int main(void)
 #pragma ide diagnostic ignored "EndlessLoop"
   while (1)
   {
-      HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-      HAL_Delay(1000);
+
+      for (int i = 0; i < 1000; ++i)
+      {
+          HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+          HAL_Delay(1);
+      }
+      for (int i = 0; i < 100; ++i)
+      {
+          HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+          HAL_Delay(10);
+      }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
