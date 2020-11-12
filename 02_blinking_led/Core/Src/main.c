@@ -1,31 +1,60 @@
 #include "stdint.h"
-#include "cmsis_gcc.h"
-//#include "stm32f103xb.h"
 #include "stm32f1xx_hal.h"
 #include "stm32f1xx_hal_conf.h"
 
+#define CPU_FREC 8000000
+#define BUTTON_OFF 0
+#define BUTTON_ON 1
+
 void setUpHSE();
 void setUpLed();
-void Delay(uint32_t val)
+
+uint32_t is_button_clicked = 0;
+void SysTick_Handler(void)
 {
-    for (; val != 0; val--)
-    {
-        __NOP();
-    }
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 }
 
 int main(void)
 {
-
-    setUpHSE();
+//    setUpHSE();
     setUpLed();
+
+    // Запускаю тактирование порта C (доступ к кнопке)
+    RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
+    // На всякий случай жду (где-то вычитал, что запуск
+    // порта может занимать до трех тактов)
+    while(__HAL_RCC_GPIOC_IS_CLK_DISABLED());
 
     while (1)
     {
-        HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-        Delay(55560);
-        HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-        Delay(55560);
+        // Проверяю, нажата ли в данный момент кнопка
+        if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13))
+        {
+            // Сбрасываю флаг
+            is_button_clicked = BUTTON_OFF;
+        }
+        else
+        {
+            // Условие сработает при нажатии только один раз
+            // пока не будет отпущена кнопка
+            if (is_button_clicked == BUTTON_OFF)
+            {
+                is_button_clicked = BUTTON_ON;
+
+                // Если таймер был включен, отключаю таймер и led
+                // в противном случае запускаю таймер
+                if ((SysTick->CTRL & SysTick_CTRL_ENABLE_Msk))
+                {
+                    SysTick->CTRL &= ~(SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_ENABLE_Msk);
+                    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+                }
+                else
+                {
+                    SysTick_Config(CPU_FREC);
+                }
+            }
+        }
     }
 }
 
