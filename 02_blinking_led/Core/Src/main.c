@@ -84,13 +84,18 @@ void setUpHSE()
 
     if (HSEStatus == 0x1)
     {
+        RCC->CR |= RCC_CR_PLLON;
+        while ((RCC->CR & RCC_CR_PLLON) != RCC_CR_PLLON);
+
+        RCC->CFGR |= RCC_CFGR_PLLXTPRE_HSE_DIV2;
         // Сбрасываю System clock switch
         RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_SW));
         // Устанавливаю на режим тактирования от HSE
-        RCC->CFGR |= (uint32_t)RCC_CFGR_SW_HSE;
+        RCC->CFGR |= (uint32_t)RCC_CFGR_SW_PLL;
 
         // На всякий случай жду
-        while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) != RCC_CFGR_SWS_HSE);
+//        while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) != RCC_CFGR_SWS_HSE);
+        while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL);
     }
 }
 
