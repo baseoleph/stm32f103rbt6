@@ -9,7 +9,9 @@
 void setUpHSE();
 void setUpLed();
 
+// Флаг для проверки нажатия кнопки
 uint32_t is_button_clicked = 0;
+
 void SysTick_Handler(void)
 {
     HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
@@ -17,7 +19,7 @@ void SysTick_Handler(void)
 
 int main(void)
 {
-//    setUpHSE();
+    setUpHSE();
     setUpLed();
 
     // Запускаю тактирование порта C (доступ к кнопке)
@@ -51,7 +53,7 @@ int main(void)
                 }
                 else
                 {
-                    SysTick_Config(CPU_FREC);
+                    SysTick_Config(CPU_FREC/2);
                 }
             }
         }
@@ -82,33 +84,13 @@ void setUpHSE()
 
     if (HSEStatus == 0x1)
     {
-        FLASH->ACR |= FLASH_ACR_PRFTBE;
-
-        FLASH->ACR &= (uint32_t)((uint32_t) ~FLASH_ACR_LATENCY);
-        FLASH->ACR |= (uint32_t)FLASH_ACR_LATENCY_2;
-
-
-        // AHB prescaler
-        RCC->CFGR |= RCC_CFGR_HPRE_DIV512;
-
-        // Как я понял это множитель на шину APB. Светодиод там.
-        // Настраивать другие множители не нужно
-        // APB2 prescaler
-        RCC->CFGR |= RCC_CFGR_PPRE2_DIV16;
-
-        // Как я это понимаю --> сбрасываем настройки pll модулей
-        RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLXTPRE | RCC_CFGR_PLLMULL));
-        RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC | RCC_CFGR_PLLMULL9);
-
-        RCC->CR |= RCC_CR_PLLON;
-
-
-        while ((RCC->CR & RCC_CR_PLLRDY) == 0);
-
+        // Сбрасываю System clock switch
         RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_SW));
-        RCC->CFGR |= (uint32_t)RCC_CFGR_SW_PLL;
+        // Устанавливаю на режим тактирования от HSE
+        RCC->CFGR |= (uint32_t)RCC_CFGR_SW_HSE;
 
-        while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) != (0x08));
+        // На всякий случай жду
+        while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) != RCC_CFGR_SWS_HSE);
     }
 }
 
