@@ -3,14 +3,31 @@
 #include "stm32f1xx_hal_conf.h"
 
 #define CPU_FREC 8000000
-#define BUTTON_OFF 0
-#define BUTTON_ON 1
 
 void setUpHSE();
 void setUpLed();
 
-// Флаг для проверки нажатия кнопки
-uint32_t is_button_clicked = 0;
+void EXTI15_10_IRQHandler(void)
+{
+    // Проверка, включен ли SysTick
+    if ((SysTick->CTRL & SysTick_CTRL_ENABLE_Msk))
+    {
+        // Отключение SysTick
+        SysTick->CTRL &= ~(SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_ENABLE_Msk);
+
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+        // Отключаю тактирование порта А
+        RCC->APB2ENR &= ~RCC_APB2ENR_IOPAEN;
+    }
+    else
+    {
+        setUpLed();
+        SysTick_Config(CPU_FREC/2);
+    }
+
+    // Сбрасываю pending register
+    EXTI->PR |= EXTI_PR_PR13;
+}
 
 void SysTick_Handler(void)
 {
@@ -20,43 +37,35 @@ void SysTick_Handler(void)
 int main(void)
 {
     setUpHSE();
-    setUpLed();
 
     // Запускаю тактирование порта C (доступ к кнопке)
     RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
-    // На всякий случай жду (где-то вычитал, что запуск
-    // порта может занимать до трех тактов)
     while(__HAL_RCC_GPIOC_IS_CLK_DISABLED());
+
+    // Включение тактирования AFIO
+    RCC->APB2ENR |= RCC_APB2ENR_AFIOEN;
+    while(__HAL_RCC_AFIO_IS_CLK_DISABLED());
+
+    // EXTICR[] отвечает за выбор вывода
+    AFIO->EXTICR[3] |= AFIO_EXTICR4_EXTI13_PC;
+
+
+    // Falling trigger selection register
+    EXTI->FTSR |= EXTI_FTSR_TR13;
+
+    // Разрешаю прерывания в NVIC
+    NVIC_EnableIRQ (EXTI15_10_IRQn);
+
+    // Разрешаю прерывания в периферии
+    EXTI->IMR |= EXTI_IMR_MR13;
+
+
+    // Функцию увидел у DI HALT, но без нее тоже все работает.
+    // Не понимаю, почему
+//    __enable_irq();
 
     while (1)
     {
-        // Проверяю, нажата ли в данный момент кнопка
-        if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13))
-        {
-            // Сбрасываю флаг
-            is_button_clicked = BUTTON_OFF;
-        }
-        else
-        {
-            // Условие сработает при нажатии только один раз
-            // пока не будет отпущена кнопка
-            if (is_button_clicked == BUTTON_OFF)
-            {
-                is_button_clicked = BUTTON_ON;
-
-                // Если таймер был включен, отключаю таймер и led
-                // в противном случае запускаю таймер
-                if ((SysTick->CTRL & SysTick_CTRL_ENABLE_Msk))
-                {
-                    SysTick->CTRL &= ~(SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_ENABLE_Msk);
-                    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
-                }
-                else
-                {
-                    SysTick_Config(CPU_FREC/2);
-                }
-            }
-        }
     }
 }
 
@@ -103,7 +112,6 @@ void setUpLed()
 {
     // Запускаю тактирование порта А
     RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
-    // На всякий случай жду, пока запустится
     while(__HAL_RCC_GPIOA_IS_CLK_DISABLED());
 
     // Устанавливаю состояние для output mode push-pull
